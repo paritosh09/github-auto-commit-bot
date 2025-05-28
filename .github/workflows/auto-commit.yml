@@ -23,7 +23,7 @@ jobs:
 
       - name: Push Changes
         run: |
-          git config user.name "Paritosh"
+          git config user.name "paritosh09"
           git config user.email "paritoshupreti1999@gmail.com"
           git add .
           git commit -m "Daily auto commit"
