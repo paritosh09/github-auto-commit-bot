@@ -8,6 +8,7 @@ on:
 jobs:
   auto-commit:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -18,13 +19,4 @@ jobs:
           python-version: '3.x'
 
       - name: Run Auto Commit Script
-        run: |
-          python auto_commit.py
-
-      - name: Push Changes
-        run: |
-          git config user.name "paritosh09"
-          git config user.email "paritoshupreti1999@gmail.com"
-          git add .
-          git commit -m "Daily auto commit"
-          git push
+        run: python auto_commit.py
