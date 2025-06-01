@@ -5,12 +5,15 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write  
+
 jobs:
   auto-commit:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Python
@@ -18,5 +21,7 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Run Auto Commit Script
-        run: python auto_commit.py
+      - name: Run auto-commit script
+        run: |
+          pip install --upgrade pip
+          python auto_commit.py
